@@ -1,0 +1,30 @@
+ion-content {
+  --background: var(--steam-background); ;
+}
+
+.logo-container{
+  display: flex;
+  justify-content: center;
+}
+
+.logo-steam{
+  width: 200px;
+}
+
+.title-container{
+  display: flex;
+  justify-content: center;
+}
+
+.login-title{
+  color: white;
+  font-size: 2.8rem;
+  font-family: 'Inter';
+  font-weight: bold;
+  margin-bottom: 80px;
+}
+
+.sign-in{
+  text-transform: uppercase;
+  color: #1999FF;
+}
