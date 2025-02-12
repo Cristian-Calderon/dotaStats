@@ -28,7 +28,8 @@ const Login: React.FC = () => {
 
   return (
     <IonPage className='login-background'>
-      <IonContent className="ion-padding login-background">
+      {/* IonContent lo quite className ="ion-padding" */}
+      <IonContent className=" login-background">
         <div className='logo-container'>
           <IonImg src={steamLogo} alt="Logo de Steam" className='logo-steam' />
         </div>
@@ -45,16 +46,16 @@ const Login: React.FC = () => {
           </IonText>
           {/* Formulario */}
 
-          <form onSubmit={(event) => handleSubmit(event)} className=''>
-          <IonItem>
-            <IonInput
-            placeholder='User'
-              type="email"
-              value={email}
-              onIonChange={(e) => setEmail(e.detail.value!)}
-              required
-            />
-          </IonItem>
+          <form onSubmit={(event) => handleSubmit(event)}>
+            <IonItem>
+              <IonInput
+                placeholder='User'
+                type="email"
+                value={email}
+                onIonChange={(e) => setEmail(e.detail.value!)}
+                required
+              />
+            </IonItem>
 
           </form>
         </div>

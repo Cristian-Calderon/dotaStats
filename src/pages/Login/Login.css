@@ -1,5 +1,8 @@
 ion-content {
-  --background: var(--steam-background); ;
+  --background: var(--steam-background);
+}
+.login-background{
+  padding: 0 !important;
 }
 
 .logo-container{
@@ -27,4 +30,43 @@ ion-content {
 .sign-in{
   text-transform: uppercase;
   color: #1999FF;
+  
+}
+
+/* Form */
+
+
+/* form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} */
+
+ion-item {
+  --padding-start: 0;
+  --inner-padding-end: 0;
+  --inner-padding-start: 0;
+  --padding-end: 0;
+  --background: var(--text-placeholder);
+  --min-width: 257px;
+  
+}
+
+ion-input {
+  --padding-top: 0;
+  --padding-bottom: 0;
+  --padding-start: 0;
+  --padding-end: 0;
+  
+}
+
+
+.item-inner{
+  --padding: 0;
+  --margin: 0;
+}
+
+.item-native{
+  padding: 0 !important;
+  margin: 0 !important;
 }
