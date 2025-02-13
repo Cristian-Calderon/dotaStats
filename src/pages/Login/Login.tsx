@@ -41,23 +41,37 @@ const Login: React.FC = () => {
         </div>
 
         <div className='form-container'>
-          <IonText>
-            <p className='sign-in text-xs'>Sing in with account name</p>
-          </IonText>
-          {/* Formulario */}
+          <div className='input-container'>
+            <IonText>
+              <p className='sign-in text-xs'>Sing in with account name</p>
+            </IonText>
+            {/* Formulario */}
 
-          <form onSubmit={(event) => handleSubmit(event)}>
-            <IonItem>
+            <form onSubmit={(event) => handleSubmit(event)}>
               <IonInput
+                className='ion-input-responsive'
                 placeholder='User'
                 type="email"
                 value={email}
                 onIonChange={(e) => setEmail(e.detail.value!)}
                 required
               />
-            </IonItem>
 
-          </form>
+              <IonText>
+                <p className='password text-xs'>Password</p>
+              </IonText>
+              <IonInput
+                className='ion-input-responsive'
+                placeholder='Password'
+                type="password"
+                value={email}
+                onIonChange={(e) => setEmail(e.detail.value!)}
+                required
+              />
+
+              <IonButton expand="block" type="submit" className="custom-button text-xs">Sign in</IonButton>
+            </form>
+          </div>
         </div>
 
       </IonContent>
