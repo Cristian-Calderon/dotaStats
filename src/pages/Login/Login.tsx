@@ -74,6 +74,18 @@ const Login: React.FC = () => {
           </div>
         </div>
 
+        <div className='register-container'>
+          <div className='register-text'>
+          <IonText>
+            <p className='text-xl color-text margin-text'>¿Tu primera vez en Steam?</p>
+          </IonText>
+          <IonButton expand="block" type="submit" className="custom-button-little text-xs">Crea un cuenta</IonButton>
+          <IonText>
+            <p className='text-xs color-text'>Es gratis y muy facil. Descubrir miles de Juegos para jugar con millones de amigos nuevos. Mas informacion acerde de Steam</p>
+          </IonText>
+          </div>
+        </div>
+
       </IonContent>
     </IonPage>
   );

@@ -5,6 +5,7 @@ http://ionicframework.com/docs/theming/ */
 :root {
     --text-important: #92BB35;
     --text: #CCCCCC;
+    --text-white: #FFFFFF;
     --background-solid: #1C242D;
     --background-soft: #242F39;
     --steam-background: #171A21;
