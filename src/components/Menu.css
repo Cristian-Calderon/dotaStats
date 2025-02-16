@@ -1,0 +1,51 @@
+.menu-container {
+  background: var(--background-soft);
+}
+
+ion-list {
+  padding: 0 !important;
+
+}
+
+/* Probar */
+.menu-custom ion-item {
+  --background: var(--background-soft);
+  --color: var(--text-white);
+}
+
+ion-label {
+  margin-left: 10px;
+}
+
+
+/* Estilo para el botón del menú */
+.custom-menu-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+  /* Cambia el color del texto */
+  cursor: pointer;
+  background: var(--logo);
+  padding-right: 10px;
+}
+
+.toolbar-background {
+  background: red !important;
+  /* Cambia el color del fondo */
+}
+
+/* Cambiar color del icono del menú hamburguesa */
+.custom-menu-button ion-menu-button {
+  color: var(--text-white);
+  /* Cambia el color del icono */
+  width: 50px;
+  font-size: 24px;
+  /* Cambia el tamaño del icono */
+}
+
+/* Cambiar color de fondo de la barra */
+.custom-toolbar {
+  --background: var(--logo);
+  --color: white; /* Texto en blanco */
+}

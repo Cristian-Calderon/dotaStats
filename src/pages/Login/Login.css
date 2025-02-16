@@ -121,6 +121,9 @@ ion-input {
 .color-text{
   color: var(--text-white);
 }
+.color-text-grey{
+  color: var(--text);
+}
 
 .margin-text{
   margin-top: 79px;
