@@ -1,0 +1,13 @@
+.logo-container {
+    display: flex;
+    justify-content: center;
+}
+
+.logo-steam {
+    width: 200px;
+}
+
+ion-input {
+    background: var(--text-placeholder);
+    margin-bottom: 20px;
+}
