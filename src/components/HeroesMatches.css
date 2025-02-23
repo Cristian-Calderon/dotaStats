@@ -1,0 +1,84 @@
+/* Estilo para la barra superior */
+.header-row {
+    font-weight: bold;
+    text-align: center;
+    background-color: var(--background-soft);
+    color: var(--text-white);
+}
+
+/* Filas de datos */
+.data-row {
+    text-align: center;
+    padding: 8px;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Imagen del héroe */
+.hero-img {
+    width: 60px;
+    height: 35px;
+    
+}
+
+/* Estilos de progreso */
+.progress-bar {
+    height: 6px;
+    border-radius: 5px;
+}
+
+/* Cris */
+
+
+.hero-name{
+    width: 67px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+.color-important{
+    color: var(--text-important);
+}
+
+.color-gray{
+    color: var(--text);
+}
+
+.progress-bars{
+    /* background-color: var(--logo); */
+    height: 4px;
+    --background: transparent;
+    --progress-background: var(--logo) !important;
+}
+
+
+.progress-victory {
+    height: 4px;
+    --background: transparent;
+    --progress-background: var(--text-important);
+}
+
+.progress-kda {
+    height: 4px;
+    --background: transparent;
+    --progress-background: #F88634;
+}
+
+.progress-core {
+    height: 4px;
+    --background: transparent;
+    --progress-background: var(--logo);
+}
+
+.progress-linea{
+    height: 4px;
+    --background: transparent;
+    --progress-background: #CA35F0;
+}
+
+.progress-principal{
+    height: 4px;
+    --background: transparent;
+    --progress-background: #FF7375;
+}
+

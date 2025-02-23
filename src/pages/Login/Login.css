@@ -130,3 +130,9 @@ ion-input {
 }
 
 /* Media */
+@media (min-width: 768px) {
+  .ion-input-responsive {
+    max-width: 257px;
+    width: 100%;
+  }
+}

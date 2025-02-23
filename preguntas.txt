@@ -1,81 +1,147 @@
-Este es mi Menu.tsx:
+No me esta mostrando lo que hay en userMatch:
+
+SignIn.tsx:
 import React from 'react';
-import { IonMenu, IonHeader, IonToolbar, IonTitle, IonContent, IonList, IonItem, IonLabel, IonButtons, IonMenuButton } from '@ionic/react';
-import { useMediaQuery } from 'react-responsive';
-import { useLocation } from 'react-router-dom';
-import './Menu.css'; // Importar los estilos del menú
+import { useHistory } from 'react-router-dom';
+import { IonPage, IonContent, IonButton, IonText, IonImg } from '@ionic/react';
+import UserPerfil from '../../components/UserPerfil'; // Adjust the path as necessary
+import './SignIn.css';
+import UserContent from '../../components/UserContent'; // Adjust the path as necessary
+import UserMatch from '../../components/UserMatch'
 
-const Menu: React.FC = () => {
-  const isDesktop = useMediaQuery({ minWidth: 1024 });
-  const location = useLocation();
 
-  // Ocultar menú en Login y Register
-  const hideMenu = location.pathname === '/' || location.pathname === '/register';
 
-  if (hideMenu) return null; // No renderiza nada si está en Login o Register
+const SignIn: React.FC = () => {
+  const history = useHistory();
 
   return (
-    <>
-      {/* 🟢 Menú lateral en móviles */}
-      {!isDesktop && (
-        <>
-          <IonMenu contentId="main-content" className='menu-custom'>
-            {/* <IonHeader>
-              <IonToolbar>
-                <IonTitle>Menú</IonTitle>
-              </IonToolbar>
-            </IonHeader> */}
-            <IonContent>
-              <IonList>
-                <IonItem className='text-lg' routerLink="/sign-in">
-                  <IonLabel>Inicio</IonLabel>
-                </IonItem>
-                <IonItem className='text-lg' routerLink="/register">
-                  <IonLabel>Estadisticas</IonLabel>
-                </IonItem>
-                <IonItem className='text-lg' routerLink="/register">
-                  <IonLabel>Heroes</IonLabel>
-                </IonItem>
-                <IonItem className='text-lg' routerLink="/register">
-                  <IonLabel>Objetos</IonLabel>
-                </IonItem>
-                <IonItem className='text-lg' routerLink="/register">
-                  <IonLabel>Blog</IonLabel>
-                </IonItem>
-              </IonList>
-            </IonContent>
-          </IonMenu>
-
-          {/* Personalizar el botón del menú hamburguesa */}
-          <IonButtons slot="start" className='menu-container'>
-            <div className="custom-menu-button">
-              <IonMenuButton />
-              <span className="menu-text text-xl">DOTASTATS</span>
-            </div>
-          </IonButtons>
-        </>
-      )}
-
-      {/* 🔵 Navbar en Escritorio */}
-      {isDesktop && (
-        <IonHeader>
-          <IonToolbar>
-            <IonTitle>Mi App</IonTitle>
-            <div style={{ display: 'flex', gap: '1rem', marginLeft: 'auto', marginRight: '1rem' }}>
-              <IonItem routerLink="/sign-in">
-                <IonLabel>Sign In</IonLabel>
-              </IonItem>
-              <IonItem routerLink="/register">
-                <IonLabel>Register</IonLabel>
-              </IonItem>
-            </div>
-          </IonToolbar>
-        </IonHeader>
-      )}
-    </>
+    <IonPage>
+      <IonContent className="ion-padding signin-content">
+        <UserContent>
+          <UserPerfil />
+          <UserMatch />
+        </UserContent>
+      </IonContent>
+    </IonPage>
   );
 };
 
-export default Menu;
+export default SignIn;
 
-Como puedo agregarle un boton en el menu hamburguesa que este al otro lado que diga User.
+UserContent.tsx:
+import React from 'react';
+import './UserContent.css';
+
+interface UserContentProps {
+  children: React.ReactNode;
+}
+
+const UserContent: React.FC<UserContentProps> = ({ children }) => {
+  return (
+    <div>
+      {children}
+      
+    </div>
+  );
+};
+
+export default UserContent;
+
+UserPerfil.tsx:
+import React from "react";
+import { IonPage, IonContent, IonImg, IonText } from "@ionic/react";
+
+import { useMediaQuery } from "react-responsive";
+import { useLocation } from "react-router-dom";
+import './UserPerfil.css';
+import lucas from '../assets/lucas.jpg'
+
+const UserPerfil: React.FC = () => {
+
+
+    return (
+        <>
+            <IonPage>
+                <IonContent>
+
+                    {/* Imagen */}
+                    <div className="perfil">
+                        <div className="image-container">
+                            <IonImg src={lucas} alt="Logo de la App" className="logo-img" />
+                        </div>
+
+                        {/* Texto */}
+                        <div className="text-container">
+                            <IonText>
+                                <p className="sign-in-title text-xl">User</p>
+                                <p className="sign-in-description .text-sm">
+                                    Sumario
+                                </p>
+                            </IonText>
+                        </div>
+                    </div>
+
+                </IonContent>
+            </IonPage>
+
+        </>
+
+
+    );
+
+};
+
+export default UserPerfil;
+
+UserMatch.tsx: 
+import React from "react";
+import { IonPage, IonContent, IonImg, IonText, IonGrid, IonRow, IonCol, IonCard, IonCardContent } from "@ionic/react";
+import './UserMatch.css';
+
+const UserMatch: React.FC = () => {
+    return (
+        <IonGrid>
+            <IonRow>
+                <IonCol>
+                    <IonCard>
+                        <IonCardContent>
+                            <IonText color="medium"><h4>Hace 15 días</h4></IonText>
+                            <IonText><h3>ÚLTIMA PARTIDA</h3></IonText>
+                        </IonCardContent>
+                    </IonCard>
+                </IonCol>
+            </IonRow>
+
+            <IonRow>
+                <IonCol>
+                    <IonCard>
+                        <IonCardContent>
+                            <IonText color="medium"><h4>1,340 - 1,207 - 24</h4></IonText>
+                            <IonText><h3>RÉCORD</h3></IonText>
+                        </IonCardContent>
+                    </IonCard>
+                </IonCol>
+            </IonRow>
+
+            <IonRow>
+                <IonCol>
+                    <IonCard>
+                        <IonCardContent>
+                            <IonText color="medium"><h4>52.12%</h4></IonText>
+                            <IonText><h3>PORCENTAJE DE VICTORIA</h3></IonText>
+                        </IonCardContent>
+                    </IonCard>
+                </IonCol>
+            </IonRow>
+
+            <IonRow className="ion-justify-content-center">
+                <IonCol size="auto">
+                    <IonImg src="https://via.placeholder.com/150" alt="Imagen de usuario" />
+                </IonCol>
+            </IonRow>
+        </IonGrid>
+
+    );
+};
+
+export default UserMatch;

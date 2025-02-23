@@ -1,0 +1,8 @@
+.padding-top{
+    margin-top: 56px;
+}
+
+.signin-page{
+  background-color: var(--background-soft);
+  width: 100%;
+}

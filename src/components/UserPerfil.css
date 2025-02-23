@@ -1,0 +1,20 @@
+
+
+.perfil{
+    display: flex;
+}
+
+.logo-img{
+    width: 65px;
+    height: 65px;
+}
+
+.sign-in-title{
+    color: var(--text-white);
+    margin: 0px;
+}
+
+.sign-in-description{
+    color: var(--text);
+    margin: 0px;
+}
