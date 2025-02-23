@@ -24,16 +24,16 @@ const Menu: React.FC = () => {
                 <IonItem className='text-lg' routerLink="/sign-in">
                   <IonLabel>Inicio</IonLabel>
                 </IonItem>
-                <IonItem className='text-lg' routerLink="/register">
+                <IonItem className='text-lg' routerLink="/stats">
                   <IonLabel>Estadisticas</IonLabel>
                 </IonItem>
-                <IonItem className='text-lg' routerLink="/register">
+                <IonItem className='text-lg' routerLink="/heroes">
                   <IonLabel>Heroes</IonLabel>
                 </IonItem>
-                <IonItem className='text-lg' routerLink="/register">
+                <IonItem className='text-lg' routerLink="/items">
                   <IonLabel>Objetos</IonLabel>
                 </IonItem>
-                <IonItem className='text-lg' routerLink="/register">
+                <IonItem className='text-lg' routerLink="/blog">
                   <IonLabel>Blog</IonLabel>
                 </IonItem>
               </IonList>
@@ -69,8 +69,20 @@ const Menu: React.FC = () => {
               <IonItem routerLink="/sign-in">
                 <IonLabel>Sign In</IonLabel>
               </IonItem>
-              <IonItem routerLink="/register">
-                <IonLabel>Register</IonLabel>
+              <IonItem routerLink="/stats">
+                <IonLabel>Estadísticas</IonLabel>
+              </IonItem>
+              <IonItem routerLink="/heroes">
+                <IonLabel>Héroes</IonLabel>
+              </IonItem>
+              <IonItem routerLink="/items">
+                <IonLabel>Objetos</IonLabel>
+              </IonItem>
+              <IonItem routerLink="/blog">
+                <IonLabel>Blog</IonLabel>
+              </IonItem>
+              <IonItem routerLink="/user">
+                <IonLabel>User</IonLabel>
               </IonItem>
             </div>
           </IonToolbar>

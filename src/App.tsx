@@ -10,6 +10,12 @@ import Menu from './components/Menu';
 import Login from './pages/Login/Login';
 import SignIn from './pages/SignIn/SignIn';
 import Register from './pages/Register/Register';
+import Stats from './pages/Stats/Stats';
+import Heroes from './pages/Heroes/Heroes';
+import Items from './pages/Items/Items';
+import Blog from './pages/Blog/Blog';
+import UserProfile from './pages/UserProfile/UserProfile';
+
 
 import '@ionic/react/css/core.css';
 import '@ionic/react/css/normalize.css';
@@ -30,7 +36,11 @@ const App: React.FC = () => (
       <IonRouterOutlet id="main-content">
         <Route exact path="/" component={Login} />
         <Route exact path="/sign-in" component={SignIn} />
-        <Route exact path="/register" component={Register} />
+        <Route exact path="/stats" component={Stats} />
+        <Route exact path="/heroes" component={Heroes} />
+        <Route exact path="/items" component={Items} />
+        <Route exact path="/blog" component={Blog} />
+        <Route exact path="/user" component={UserProfile} />
       </IonRouterOutlet>
     </IonReactRouter>
   </IonApp>

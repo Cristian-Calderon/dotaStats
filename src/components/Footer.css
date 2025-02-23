@@ -1,0 +1,26 @@
+.footer {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos pasen a la siguiente línea si es necesario */
+    justify-content: space-evenly; /* Distribuye los elementos uniformemente en la fila */
+    align-items: center;
+    padding: 10px 20px;
+    gap: 10px; /* Espacio entre los elementos */
+    background-color: var(--background-solid);
+    color: white;
+    text-align: center;
+    width: 100%; /* Asegura que el footer ocupe todo el ancho */
+  }
+  
+  .footer p {
+    margin: 0;
+    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+  }
+  
+  /* Ajuste en móviles */
+  @media (max-width: 600px) {
+    .footer {
+      flex-wrap: wrap; /* Mantiene la distribución en varias filas */
+      justify-content: center; /* Centra los elementos si no caben en una sola fila */
+    }
+  }
+  

@@ -6,6 +6,7 @@ import './SignIn.css';
 import UserContent from '../../components/UserContent'; // Adjust the path as necessary
 import UserMatch from '../../components/UserMatch'
 import HeroesMatches from '../../components/HeroesMatches';
+import Footer from '../../components/Footer';
 
 
 
@@ -20,6 +21,7 @@ const SignIn: React.FC = () => {
           <UserMatch />
           <HeroesMatches />
         </UserContent>
+        <Footer />
       </IonContent>
     </IonPage>
   );
