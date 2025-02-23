@@ -4,6 +4,97 @@
     text-align: center;
     background-color: var(--background-soft);
     color: var(--text-white);
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: center; */
+}
+
+/* Filas de datos */
+.data-row {
+    text-align: center;
+    padding: 8px;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: center; */
+}
+
+/* Imagen del héroe */
+.hero-img {
+    width: 60px;
+    height: 35px;
+}
+
+/* Estilos de progreso */
+.progress-bar {
+    height: 6px;
+    border-radius: 5px;
+}
+
+/* Estilos flexibles para columnas */
+.hero-name {
+    width: auto;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+/* Estilos de colores */
+.color-important {
+    color: var(--text-important);
+}
+
+.color-gray {
+    color: var(--text);
+}
+
+/* Estilos de barra de progreso */
+.progress-bars, .progress-victory, .progress-kda, 
+.progress-core, .progress-linea, .progress-principal {
+    height: 4px;
+    --background: transparent;
+}
+
+/* Adaptación a móviles */
+@media screen and (max-width: 768px) {
+    .header-row {
+        font-size: 12px;
+        display: flex;
+        flex-wrap: wrap;
+        /* justify-content: space-around; */
+    }
+
+    .data-row {
+        display: flex;
+        flex-wrap: wrap;
+        /* justify-content: center; */
+    }
+
+    .hero-img {
+        width: 45px;
+        height: 30px;
+    }
+
+    .hero-name {
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .progress-bars, .progress-victory, .progress-kda, 
+    .progress-core, .progress-linea, .progress-principal {
+        height: 3px;
+    }
+}
+
+
+/* Cris */
+
+.header-row {
+    font-weight: bold;
+    text-align: center;
+    background-color: var(--background-soft);
+    color: var(--text-white);
 }
 
 /* Filas de datos */
@@ -82,3 +173,21 @@
     --progress-background: #FF7375;
 }
 
+.victoria{
+    width: 80px;
+}
+
+.kda{
+    width: 60px;
+}
+
+.rol{
+    width: 60px;
+}
+
+.linea-principal{
+    width: 90px;
+}
+.text-align{
+    text-align: left;
+}

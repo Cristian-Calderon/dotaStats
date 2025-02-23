@@ -10,64 +10,55 @@ const HeroesMatches: React.FC = () => {
         <IonGrid>
             {/* Barra principal */}
             <IonRow className="header-row">
-                <IonCol><IonText></IonText></IonCol>
-                <IonCol><IonText>Heroes</IonText></IonCol>
-                <IonCol><IonText>Partidas</IonText></IonCol>
-                <IonCol><IonText>% Victoria</IonText></IonCol>
-                <IonCol><IonText>KDA</IonText></IonCol>
-                <IonCol><IonText>Rol</IonText></IonCol>
-                <IonCol><IonText>Senda</IonText></IonCol>
-                <IonCol><IonText>Principal</IonText></IonCol>
+                <IonCol size="auto">Imagen<IonText></IonText></IonCol>
+                <IonCol size="auto"><IonText>Heroes</IonText></IonCol>
+                <IonCol size="auto"><IonText>Partidas</IonText></IonCol>
+                <IonCol size="auto"><IonText>% Victoria</IonText></IonCol>
+                <IonCol size="auto"><IonText>KDA</IonText></IonCol>
+                <IonCol size="auto"><IonText>Rol</IonText></IonCol>
+                <IonCol size="auto"><IonText>Senda</IonText></IonCol>
+                <IonCol size="auto"><IonText>Principal</IonText></IonCol>
             </IonRow>
 
             {/* Fila de datos */}
-            <IonRow className="data-row">
-                {/* Héroe */}
-                <IonCol>
+            <IonRow className="data-row" >
+                <IonCol size="auto">
                     <IonImg src={tinker} alt="Tinker" className="hero-img" />
                 </IonCol>
-                <IonCol className="hero-name text-xs">
-                    <IonText className="color-important ">Tinker</IonText>
-                    <IonText className="time-text color-gray ">Hace 8 días</IonText>
+                <IonCol size="auto" className="hero-name text-xs">
+                    <IonText className="color-important">Tinker</IonText>
+                    <IonText className="time-text color-gray">Hace 8 días</IonText>
                 </IonCol>
 
-                {/* Partidas */}
-                <IonCol>
-                    <IonText className="color text-xs">557</IonText>
-                    <IonProgressBar value={0.75} className="progress-bars"></IonProgressBar>
+                <IonCol size="auto"className="text-align">
+                    <IonText className="color text-xs ">557</IonText>
+                    <IonProgressBar value={1} className="progress-bars victoria"></IonProgressBar>
                 </IonCol>
 
-                {/* % Victoria */}
-                <IonCol>
+                <IonCol size="auto" className="text-align">
                     <IonText className="color text-xs">62.12%</IonText>
-                    <IonProgressBar value={0.62} className="progress-victory"></IonProgressBar>
+                    <IonProgressBar value={1} className="progress-victory kda"></IonProgressBar>
                 </IonCol>
 
-                {/* KDA */}
-                <IonCol>
+                <IonCol size="auto" className="text-align">
                     <IonText className="color text-xs">3.45</IonText>
-                    <IonProgressBar value={0.7} className="progress-kda"></IonProgressBar>
+                    <IonProgressBar value={1} className="progress-kda rol"></IonProgressBar>
                 </IonCol>
 
-                {/* Rol */}
-                <IonCol>
+                <IonCol size="auto" className="text-align">
                     <IonText className="color text-xs">Core</IonText>
-                    <IonProgressBar value={1} className="progress-core"></IonProgressBar>
+                    <IonProgressBar value={1} className="progress-core rol"></IonProgressBar>
                 </IonCol>
 
-                {/* Senda */}
-                <IonCol>
+                <IonCol size="auto" className="text-align">
                     <IonText className="color text-xs">Medio</IonText>
-                    <IonProgressBar value={0.5} className="progress-linea"></IonProgressBar>
+                    <IonProgressBar value={1} className="progress-linea linea-principal"></IonProgressBar>
                 </IonCol>
 
-                {/* Principal */}
-                <IonCol>
+                <IonCol size="auto" className="text-align">
                     <IonText className="color text-xs">Si</IonText>
-                    <IonProgressBar value={.68} className="progress-principal"></IonProgressBar>
+                    <IonProgressBar value={1} className="progress-principal linea-principal"></IonProgressBar>
                 </IonCol>
-
-                
             </IonRow>
         </IonGrid>
     );
