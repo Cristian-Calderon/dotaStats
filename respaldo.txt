@@ -1,78 +1,41 @@
 import React from 'react';
-import { IonMenu, IonHeader, IonToolbar, IonTitle, IonContent, IonList, IonItem, IonLabel, IonButtons, IonMenuButton } from '@ionic/react';
-import { useMediaQuery } from 'react-responsive';
-import { useLocation } from 'react-router-dom';
-import './Menu.css'; // Importar los estilos del menú
+import { IonPage, IonContent, IonText, IonImg } from '@ionic/react';
+import './GridHeroes.css'; // Importamos estilos
 
-const Menu: React.FC = () => {
-  const isDesktop = useMediaQuery({ minWidth: 1024 });
-  const location = useLocation();
+const GridHeroes: React.FC = () => {
+    // Lista de imágenes (puedes modificar con tus URLs reales)
+    const heroes = [
+        { src: 'https://www.dotabuff.com/assets/heroes/alchemist.jpg', alt: 'Alchemist' },
+        { src: 'https://www.dotabuff.com/assets/heroes/axe.jpg', alt: 'Axe' },
+        { src: 'https://www.dotabuff.com/assets/heroes/bristleback.jpg', alt: 'Bristleback' },
+        { src: 'https://www.dotabuff.com/assets/heroes/centaur-warrunner.jpg', alt: 'Centaur Warrunner' },
+        { src: 'https://www.dotabuff.com/assets/heroes/centaur-warrunner.jpg', alt: 'Centaur Warrunner' },
+        { src: 'https://www.dotabuff.com/assets/heroes/centaur-warrunner.jpg', alt: 'Centaur Warrunner' },
+        { src: 'https://www.dotabuff.com/assets/heroes/centaur-warrunner.jpg', alt: 'Centaur Warrunner' },
+        { src: 'https://www.dotabuff.com/assets/heroes/centaur-warrunner.jpg', alt: 'Centaur Warrunner' },
+        { src: 'https://www.dotabuff.com/assets/heroes/centaur-warrunner.jpg', alt: 'Centaur Warrunner' },
+    ];
 
-  // Ocultar menú en Login y Register
-  const hideMenu = location.pathname === '/' || location.pathname === '/register';
-
-  if (hideMenu) return null; // No renderiza nada si está en Login o Register
-
-  return (
-    <>
-      {/* 🟢 Menú lateral en móviles */}
-      {!isDesktop && (
-        <>
-          <IonMenu contentId="main-content" className='menu-custom'>
-            {/* <IonHeader>
-              <IonToolbar>
-                <IonTitle>Menú</IonTitle>
-              </IonToolbar>
-            </IonHeader> */}
+    return (
+        <IonPage>
             <IonContent>
-              <IonList>
-                <IonItem className='text-lg' routerLink="/sign-in">
-                  <IonLabel>Inicio</IonLabel>
-                </IonItem>
-                <IonItem className='text-lg' routerLink="/register">
-                  <IonLabel>Estadisticas</IonLabel>
-                </IonItem>
-                <IonItem className='text-lg' routerLink="/register">
-                  <IonLabel>Heroes</IonLabel>
-                </IonItem>
-                <IonItem className='text-lg' routerLink="/register">
-                  <IonLabel>Objetos</IonLabel>
-                </IonItem>
-                <IonItem className='text-lg' routerLink="/register">
-                  <IonLabel>Blog</IonLabel>
-                </IonItem>
-              </IonList>
+                <div className="hero-grid-container">
+                    {/* Sección de fuerza */}
+                    <div className="hero-category">
+                        <img src="https://www.dotabuff.com/assets/hero_str.png" alt="Fuerza" />
+                        <p className="color">Fuerza</p>
+                    </div>
+
+                    {/* Grid de imágenes */}
+                    <div className="hero-grid">
+                        {heroes.map((hero, index) => (
+                            <img key={index} src={hero.src} alt={hero.alt} className="hero-img" />
+                        ))}
+                    </div>
+                </div>
             </IonContent>
-          </IonMenu>
-
-          {/* Personalizar el botón del menú hamburguesa */}
-          <IonButtons slot="start" className='menu-container'>
-            <div className="custom-menu-button">
-              <IonMenuButton />
-              <span className="menu-text text-xl">DOTASTATS</span>
-            </div>
-          </IonButtons>
-        </>
-      )}
-
-      {/* 🔵 Navbar en Escritorio */}
-      {isDesktop && (
-        <IonHeader>
-          <IonToolbar>
-            <IonTitle>Mi App</IonTitle>
-            <div style={{ display: 'flex', gap: '1rem', marginLeft: 'auto', marginRight: '1rem' }}>
-              <IonItem routerLink="/sign-in">
-                <IonLabel>Sign In</IonLabel>
-              </IonItem>
-              <IonItem routerLink="/register">
-                <IonLabel>Register</IonLabel>
-              </IonItem>
-            </div>
-          </IonToolbar>
-        </IonHeader>
-      )}
-    </>
-  );
+        </IonPage>
+    );
 };
 
-export default Menu;
+export default GridHeroes;
