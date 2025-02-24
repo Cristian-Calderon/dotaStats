@@ -3,18 +3,18 @@ import { IonPage, IonContent, IonImg, IonText } from "@ionic/react";
 
 import { useMediaQuery } from "react-responsive";
 import { useLocation } from "react-router-dom";
-import './UserPerfil.css';
+import './Barra.css';
 
 
 const Barra: React.FC = () => {
     return (
         <>
-        <div>
-            <p>Perfil</p>
-            <p>Dotabuff Pluss</p>
-            <p>Redes Sociales</p>
-            <p>Cambiar perfil</p>
-        </div>
+            <div className="barra">
+                <p className="text-xs color">Perfil</p>
+                <p className="text-xs color-important">Dotabuff Pluss</p>
+                <p className="text-xs color">Redes Sociales</p>
+                <p className="text-xs color">Cambiar perfil</p>
+            </div>
         </>
     );
 
