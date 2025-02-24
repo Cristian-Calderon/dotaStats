@@ -1,6 +1,6 @@
 import React from 'react';
 import { IonPage, IonContent, IonText, IonImg } from '@ionic/react';
-import './GridHeroes.css'; // Importamos estilos
+import './GridHeroesFuerza.css'; // Importamos estilos
 
 const heroes = [
   { name: 'Alchemist', src: 'https://www.dotabuff.com/assets/heroes/alchemist.jpg' },
@@ -37,10 +37,9 @@ const heroes = [
   { name: 'Wraith King', src: 'https://www.dotabuff.com/assets/heroes/wraith-king.jpg' }
 ];
 
-const GridHeroes: React.FC = () => {
+const GridHeroesFuerza: React.FC = () => {
   return (
-    <IonPage>
-      <IonContent>
+    
         <div className="hero-grid-container">
           {/* Categoría de Fuerza */}
           <div className="hero-category">
@@ -55,9 +54,8 @@ const GridHeroes: React.FC = () => {
             ))}
           </div>
         </div>
-      </IonContent>
-    </IonPage>
+      
   );
 };
 
-export default GridHeroes;
+export default GridHeroesFuerza;

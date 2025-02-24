@@ -1,7 +1,12 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import { IonPage, IonContent, IonButton, IonText, IonImg } from '@ionic/react';
-import GridHeroes from '../../components/GridHeroes';
+import GridHeroesFuerza from '../../components/GridHeroesFuerza'; //
+import GridHeroesAgilidad from '../../components/GridHeroesAgilidad';
+import GridHeroesInteligencia from '../../components/GridHeroesInteligencia';
+import GridHeroesUniversal from '../../components/GridHeroesUniversal';
+import Footer from '../../components/Footer';
+
 
 const Heroes: React.FC = () => {
   const history = useHistory();
@@ -9,7 +14,11 @@ const Heroes: React.FC = () => {
   return (
     <IonPage className='padding-top'>
       <IonContent className="">
-        <GridHeroes />
+        <GridHeroesFuerza />
+        <GridHeroesAgilidad />
+        <GridHeroesInteligencia />
+        <GridHeroesUniversal />
+        <Footer />
       </IonContent>
     </IonPage>
   );
