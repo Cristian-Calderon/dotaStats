@@ -1,0 +1,19 @@
+.custom-list {
+    
+    /* --color: var(--background-soft); */
+    border-radius: 10px;
+}
+
+/* Cambiar color de los IonItem dentro de la lista */
+.custom-list ion-item {
+    --color: var(--text-important);
+    font-size: 14px;
+}
+
+.custom-list ion-item:hover {
+    background-color: #0ed60e; /* Color al pasar el mouse */
+}
+
+ion-button{
+    --background: transparent;
+}

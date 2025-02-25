@@ -1,0 +1,32 @@
+.option-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.option-button {
+    --background: var(--background-soft);
+    --color: white;
+    --border-radius: 8px;
+    --padding: 10px 20px;
+    font-size: 16px;
+    transition: 0.3s;
+    font-weight: normal;
+    text-transform: capitalize;
+    
+}
+
+.option-button.outline {
+    --background: transparent;
+    
+    --color: white;
+}
+
+.option-button:hover {
+    opacity: 0.8;
+}
+
+.color-g{
+    color: #9CA3AB;
+    font-weight: normal;
+}
