@@ -1,41 +1,62 @@
-import React from 'react';
-import { IonPage, IonContent, IonText, IonImg } from '@ionic/react';
-import './GridHeroes.css'; // Importamos estilos
+import React from "react";
+import {
+  IonGrid, IonRow, IonCol, IonText, IonImg, IonProgressBar,
+  IonPage,
+  IonContent
+} from "@ionic/react";
 
-const GridHeroes: React.FC = () => {
-    // Lista de imágenes (puedes modificar con tus URLs reales)
-    const heroes = [
-        { src: 'https://www.dotabuff.com/assets/heroes/alchemist.jpg', alt: 'Alchemist' },
-        { src: 'https://www.dotabuff.com/assets/heroes/axe.jpg', alt: 'Axe' },
-        { src: 'https://www.dotabuff.com/assets/heroes/bristleback.jpg', alt: 'Bristleback' },
-        { src: 'https://www.dotabuff.com/assets/heroes/centaur-warrunner.jpg', alt: 'Centaur Warrunner' },
-        { src: 'https://www.dotabuff.com/assets/heroes/centaur-warrunner.jpg', alt: 'Centaur Warrunner' },
-        { src: 'https://www.dotabuff.com/assets/heroes/centaur-warrunner.jpg', alt: 'Centaur Warrunner' },
-        { src: 'https://www.dotabuff.com/assets/heroes/centaur-warrunner.jpg', alt: 'Centaur Warrunner' },
-        { src: 'https://www.dotabuff.com/assets/heroes/centaur-warrunner.jpg', alt: 'Centaur Warrunner' },
-        { src: 'https://www.dotabuff.com/assets/heroes/centaur-warrunner.jpg', alt: 'Centaur Warrunner' },
-    ];
+import '../components/Objectos.css';
+import tinker from '../assets/heroes/Inteligencia/tinker.jpg';
 
+const Objetos: React.FC = () => {
     return (
-        <IonPage>
-            <IonContent>
-                <div className="hero-grid-container">
-                    {/* Sección de fuerza */}
-                    <div className="hero-category">
-                        <img src="https://www.dotabuff.com/assets/hero_str.png" alt="Fuerza" />
-                        <p className="color">Fuerza</p>
-                    </div>
 
-                    {/* Grid de imágenes */}
-                    <div className="hero-grid">
-                        {heroes.map((hero, index) => (
-                            <img key={index} src={hero.src} alt={hero.alt} className="hero-img" />
-                        ))}
-                    </div>
-                </div>
-            </IonContent>
-        </IonPage>
+ <IonGrid>
+          {/* Barra principal */}
+          <IonRow className="header-row">
+            <IonCol size="auto"><IonText>Imagen</IonText></IonCol>
+            <IonCol size="auto"><IonText>Objetos</IonText></IonCol>
+            <IonCol size="auto"><IonText>Veces Usados</IonText></IonCol>
+            <IonCol size="auto"><IonText>Tasa de uso</IonText>
+            </IonCol>
+            <IonCol size="auto"><IonText>Tasa de victoria</IonText>
+            </IonCol>
+
+          </IonRow>
+
+          {/* Fila de datos */}
+          <IonRow className="data-row" >
+            <IonCol size="auto">
+              <IonImg src={tinker} alt="Tinker" className="hero-img" />
+            </IonCol>
+            <IonCol size="auto" className="hero-name text-xs">
+              <IonText className="color-important">Power Treads</IonText>
+            </IonCol>
+
+            <IonCol size="auto" className="text-align">
+              <IonText className="color text-xs ">10.016.238.299</IonText>
+              <IonProgressBar value={1} className="progress-bars victoria"></IonProgressBar>
+            </IonCol>
+
+            <IonCol size="auto" className="text-align">
+              <IonText className="color text-xs">62.12%</IonText>
+              <IonProgressBar value={1} className="progress-victory kda"></IonProgressBar>
+            </IonCol>
+
+            <IonCol size="auto" className="text-align">
+              <IonText className="color text-xs">3.45</IonText>
+              <IonProgressBar value={1} className="progress-kda rol"></IonProgressBar>
+            </IonCol>
+
+           
+
+            
+          </IonRow>
+
+
+        </IonGrid>
+
     );
 };
 
-export default GridHeroes;
+export default Objetos;
