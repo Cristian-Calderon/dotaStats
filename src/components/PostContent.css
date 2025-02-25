@@ -1,0 +1,8 @@
+ion-card{
+    background: var(--background-soft);
+    
+}
+
+.card-content-md p{
+    font-size: 14px;
+}
