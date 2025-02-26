@@ -51,3 +51,22 @@ ion-label {
   --background: var(--logo);
   --color: white; /* Texto en blanco */
 }
+
+
+/* custom-desktop */
+
+.custom-desktop {
+  --background: var(--background-soft);
+}
+
+.custom-desktop-header {
+  display: flex;
+  justify-content: left;
+  gap: 5rem;
+  
+}
+
+.custom-desktop-item{
+  --background-color: transparent !important;
+
+}
