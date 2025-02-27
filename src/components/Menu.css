@@ -50,6 +50,7 @@ ion-label {
 .custom-toolbar {
   --background: var(--logo);
   --color: white; /* Texto en blanco */
+  
 }
 
 
@@ -69,4 +70,32 @@ ion-label {
 .custom-desktop-item{
   --background-color: transparent !important;
 
+}
+
+@media (min-width: 1024px) {
+  .custom-desktop {
+    --background: var(--background-solid) !important;
+    color: var(--logo);
+    
+
+
+  }
+}
+
+
+@media (min-width: 1024px) {
+  .custom-desktop ion-item {
+    --background: var(--background-solid)!important; /* Fondo oscuro en desktop */
+    font-size: 15px;
+     
+  }
+
+  .custom-desktop ion-item:hover {
+    --background: var(--background-solid) !important; /* Cambio de color al pasar el mouse
+     */
+  }
+
+  .custom-desktop ion-label {
+    color: var(--text-white) !important;
+  }
 }

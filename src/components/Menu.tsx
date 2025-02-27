@@ -64,11 +64,11 @@ const Menu: React.FC = () => {
       {isDesktop && (
         <IonHeader >
           <IonToolbar className='custom-desktop'>
-            <IonTitle>Mi App</IonTitle>
+            <IonTitle>DotaStats</IonTitle>
             {/* style={{ display: 'flex', gap: '1rem', marginLeft: 'auto', marginRight: '1rem' }} */}
             <div className='custom-desktop-header'>
               <IonItem routerLink="/sign-in">
-                <IonLabel>Sign In</IonLabel>
+                <IonLabel>Inicio</IonLabel>
               </IonItem>
               <IonItem routerLink="/stats">
                 <IonLabel>Estadísticas</IonLabel>
