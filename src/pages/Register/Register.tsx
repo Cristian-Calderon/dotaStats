@@ -58,7 +58,7 @@ const Register: React.FC = () => {
         />
 
         {/* Botón que envía el formulario */}
-        <IonButton expand="block" onClick={() => history.push('/home')}>
+        <IonButton expand="block" onClick={() => history.push('/')}>
           Registrarse
         </IonButton>
 
