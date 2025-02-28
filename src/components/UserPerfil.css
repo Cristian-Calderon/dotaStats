@@ -18,3 +18,17 @@
     color: var(--text);
     margin: 0px;
 }
+
+.modal-content {
+    padding: 20px;
+    text-align: center;
+}
+
+.modal-content h2 {
+    margin-bottom: 10px;
+}
+
+.modal-content input {
+    display: block;
+    margin: 10px auto;
+}
