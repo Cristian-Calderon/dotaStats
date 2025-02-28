@@ -6,3 +6,18 @@ ion-card{
 .card-content-md p{
     font-size: 14px;
 }
+
+/* Contenedor que permita scroll horizontal */
+.horizontal-scroll {
+    overflow-x: auto;        /* Habilita scroll en eje x */
+    white-space: nowrap;     /* Mantén contenido en una sola línea */
+  }
+  
+  /* Ajusta la imagen para que sea más ancha de lo normal, 
+     forzando así la barra de desplazamiento */
+  .scroll-image {
+    display: inline-block;   /* Para que respete el white-space: nowrap */
+            /* Dale un ancho mayor al del contenedor */
+    height: auto;
+  }
+  
