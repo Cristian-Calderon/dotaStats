@@ -1,5 +1,3 @@
-
-
 import React, { useState } from "react";
 import { Doughnut } from "react-chartjs-2";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
@@ -7,6 +5,9 @@ import "./GridHeroesFuerza.css";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
+interface Props {
+  searchTerm: string;
+}
 
 const heroes = [
   { name: 'Alchemist', src: 'https://www.dotabuff.com/assets/heroes/alchemist.jpg', stats:[90,40,60] },
@@ -43,8 +44,13 @@ const heroes = [
   { name: 'Wraith King', src: 'https://www.dotabuff.com/assets/heroes/wraith-king.jpg', stats:[90,30,50] }
 ];
 
-const GridHeroesFuerza: React.FC = () => {
+const GridHeroesFuerza: React.FC<Props> = ({ searchTerm }) => {
   const [selectedHero, setSelectedHero] = useState<string | null>(null);
+
+  // Filtrar héroes en base al término de búsqueda
+  const filteredHeroes = heroes.filter(hero =>
+    hero.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   const handleHeroClick = (heroName: string) => {
     setSelectedHero(heroName === selectedHero ? null : heroName);
@@ -52,29 +58,41 @@ const GridHeroesFuerza: React.FC = () => {
 
   return (
     <div className="hero-grid-container">
+      {/* Categoría de Fuerza */}
+      <div className="hero-category">
+        <img src="https://www.dotabuff.com/assets/hero_str.png" alt="Fuerza" />
+        <p className="color">Fuerza</p>
+      </div>
+
+      {/* Grid filtrado */}
       <div className="hero-grid">
-        {heroes.map((hero) => (
-          <div key={hero.name} className="hero-item" onClick={() => handleHeroClick(hero.name)}>
-            <img src={hero.src} alt={hero.name} className="hero-img" />
-            {selectedHero === hero.name && (
-              <div className="chart-overlay">
-                <Doughnut
-                  data={{
-                    labels: ["Fuerza", "Agilidad", "Inteligencia"],
-                    datasets: [
-                      {
-                        label: hero.name,
-                        data: hero.stats,
-                        backgroundColor: ["#FF6384", "#36A2EB", "#FFCE56"],
-                      },
-                    ],
-                  }}
-                  options={{ responsive: true, maintainAspectRatio: false }}
-                />
-              </div>
-            )}
-          </div>
-        ))}
+        {filteredHeroes.length > 0 ? (
+          filteredHeroes.map((hero) => (
+            <div key={hero.name} className="hero-item" onClick={() => handleHeroClick(hero.name)}>
+              <img src={hero.src} alt={hero.name} className="hero-img" />
+              
+              {selectedHero === hero.name && (
+                <div className="chart-overlay">
+                  <Doughnut
+                    data={{
+                      labels: ["Fuerza", "Agilidad", "Inteligencia"],
+                      datasets: [
+                        {
+                          label: hero.name,
+                          data: hero.stats,
+                          backgroundColor: ["#FF6384", "#36A2EB", "#FFCE56"],
+                        },
+                      ],
+                    }}
+                    options={{ responsive: true, maintainAspectRatio: false }}
+                  />
+                </div>
+              )}
+            </div>
+          ))
+        ) : (
+          <p>No se encontraron héroes</p>
+        )}
       </div>
     </div>
   );

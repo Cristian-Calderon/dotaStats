@@ -1,6 +1,9 @@
 import React from 'react';
 import { IonPage, IonContent, IonText, IonImg } from '@ionic/react';
 import './GridHeroesFuerza.css' // Asegúrate de tener los estilos correctos
+interface Props {
+  searchTerm: string;
+}
 
 const heroes = [
   { name: 'Anti Mage', src: 'https://www.dotabuff.com/assets/heroes/anti-mage.jpg' },
@@ -37,7 +40,12 @@ const heroes = [
   { name: 'Weaver', src: 'https://www.dotabuff.com/assets/heroes/weaver.jpg' }
 ];
 
-const GridHeroesAgilidad: React.FC = () => {
+
+const GridHeroesAgilidad: React.FC<Props> = ({ searchTerm }) => {
+  
+  const filteredHeroes = heroes.filter(hero =>
+    hero.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
   return (
 
         <div className="hero-grid-container">
@@ -49,10 +57,14 @@ const GridHeroesAgilidad: React.FC = () => {
 
           {/* Grid de imágenes responsivo */}
           <div className="hero-grid">
-            {heroes.map((hero, index) => (
-              <img key={index} src={hero.src} alt={hero.name} className="hero-img" />
-            ))}
-          </div>
+        {filteredHeroes.length > 0 ? (
+          filteredHeroes.map((hero, index) => (
+            <img key={index} src={hero.src} alt={hero.name} className="hero-img" />
+          ))
+        ) : (
+          <p>No se encontraron héroes</p>
+        )}
+      </div>
         </div>
     
   );
